@@ -47,3 +47,8 @@ Things you may want to cover:
 rvm gemset list
 rvm gemset create crud_apps
 rvm gemset use crud_apps
+
+
+* Bootstrap
+steps for adding bootstrap
+https://chatgpt.com/share/9cda69f1-bb45-49e1-8aa2-47235980f0e1
