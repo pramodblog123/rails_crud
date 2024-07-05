@@ -1,12 +1,25 @@
 <div class="container">
-    <div class="row">
-        <div class="col-sm-8">
-            <%@posts.each do |e|%>
-            <h2><%=e.title%></h2>
-            <p><%=e.description%></p>
-            <%end%>
-        </div>
-        <span><%= paginate @posts %></span>
-        <div class="col-sm-4"></div>
+  <div class="row">
+    <div class="col-sm-8">
+      <%@posts.each do |e|%>
+      <h2><%=e.title%></h2>
+      <p><%=e.description%></p>
+      <%end%>
+    <span><%= paginate @posts %></span>
     </div>
+    <div class="col-sm-4">
+      <div>
+        <%= form_with url: posts_path, method: :get, local: true do %>
+          <%= label_tag :search, "Search for:" %>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search" %>
+        <% end %>
+      </div>
+        <% @all_titles.each do |e|%>
+          <div class="ml-auto t-auto">
+            <a href="<%= edit_post_path(e)%>"><%=e.title%></a>
+          </div>
+        <%end%>
+    </div>
+  </div>
 </div>

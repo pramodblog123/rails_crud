@@ -1,6 +1,12 @@
 class PostsController < ApplicationController
   def index
-    @posts =Post.page(params[:page]).per(10)
+    @posts =Post.page(params[:page]).per(5)
+    
+    if params[:search].present?
+      @all_titles = Post.where('title LIKE ? OR description LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%")
+    else
+      @all_titles = Post.all
+    end
   end
 
   def show

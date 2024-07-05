@@ -47,6 +47,7 @@ Things you may want to cover:
 rvm gemset list
 rvm gemset create crud_apps
 rvm gemset use crud_apps
+rails routes | grep post
 
 
 * Bootstrap
