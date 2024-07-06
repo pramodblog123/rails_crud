@@ -15,6 +15,8 @@ Things you may want to cover:
 * Database creation
 
 * Database initialization
+cp db/development.sqlite3 db/development_backup.sqlite3 -> command for create dump for sql
+pg_dump your_database_name > db_backup.sql -> comand for create dump for postgres
 
 * How to run the test suite
 
@@ -53,3 +55,7 @@ rails routes | grep post
 * Bootstrap
 steps for adding bootstrap
 https://chatgpt.com/share/9cda69f1-bb45-49e1-8aa2-47235980f0e1
+
+
+
+https://gorails.com/episodes/rich-text-blog-posts-with-actiontext

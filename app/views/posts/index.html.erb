@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-8">
       <%@posts.each do |e|%>
-      <h2><%=e.title%></h2>
+      <h2><a class="text-danger" href="<%= post_path(e)%>"><%=e.title%></a></h2>
       <p><%=e.description%></p>
       <%end%>
     <span><%= paginate @posts %></span>
@@ -17,7 +17,7 @@
       </div>
         <% @all_titles.each do |e|%>
           <div class="ml-auto t-auto">
-            <a href="<%= edit_post_path(e)%>"><%=e.title%></a>
+            <a class="text-primary" href="<%= post_path(e)%>"><%=e.title%></a>
           </div>
         <%end%>
     </div>

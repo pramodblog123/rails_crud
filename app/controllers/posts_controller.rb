@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts =Post.page(params[:page]).per(5)
+    @posts =Post.page(params[:page]).per(7)
     
     if params[:search].present?
       @all_titles = Post.where('title LIKE ? OR description LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%")
@@ -10,9 +10,11 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def new
+    @post = Post.new
   end
 
   def edit
@@ -22,6 +24,9 @@ class PostsController < ApplicationController
     post = Post.new(post_params)
     post.save
     redirect_to root_path
+  end
+
+  def destory
   end
 
   private
