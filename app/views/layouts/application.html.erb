@@ -15,5 +15,15 @@
   <%= render 'layouts/header' %>
     <%= yield %>
   <%= render 'layouts/footer' %>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.jQuery) {
+        alert('jQuery is loaded');
+      } else {
+        console.log('jQuery is not loaded');
+      }
+    });
+  </script>
   </body>
 </html>
